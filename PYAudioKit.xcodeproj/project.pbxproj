@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA1F00850208FE2291653BB7 /* libPods-PYAudioKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */; };
+		E6E8B9B61A78C0D800FDF235 /* PYAudioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */; };
+		E6E8B9F31A78C1B500FDF235 /* PYAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */; };
+		E6E8B9F51A78C1B500FDF235 /* PYInnerAudioRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6E8B9B01A78C0D800FDF235 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				E6E8B9B61A78C0D800FDF235 /* PYAudioKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.release.xcconfig"; sourceTree = "<group>"; };
+		6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.debug.xcconfig"; sourceTree = "<group>"; };
+		889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYAudioKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPYAudioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAudioKit.h; sourceTree = "<group>"; };
+		E6E8B9E21A78C1B500FDF235 /* PYAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYAudioRecorder.h; sourceTree = "<group>"; };
+		E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYAudioRecorder.m; sourceTree = "<group>"; };
+		E6E8B9E71A78C1B500FDF235 /* PYInnerAudioRecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYInnerAudioRecoder.h; sourceTree = "<group>"; };
+		E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYInnerAudioRecoder.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6E8B9AF1A78C0D800FDF235 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1F00850208FE2291653BB7 /* libPods-PYAudioKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0295A1A151C5BF2CF68FD968 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */,
+				4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F12A9D3F04707AFAE2D2066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6E8B9A91A78C0D800FDF235 = {
+			isa = PBXGroup;
+			children = (
+				E6E8B9B41A78C0D800FDF235 /* PYAudioKit */,
+				E6E8B9B31A78C0D800FDF235 /* Products */,
+				0295A1A151C5BF2CF68FD968 /* Pods */,
+				4F12A9D3F04707AFAE2D2066 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E6E8B9B31A78C0D800FDF235 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6E8B9B41A78C0D800FDF235 /* PYAudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				E6E8B9E11A78C1B500FDF235 /* Recorder */,
+				E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */,
+			);
+			path = PYAudioKit;
+			sourceTree = "<group>";
+		};
+		E6E8B9E11A78C1B500FDF235 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				E6E8B9E21A78C1B500FDF235 /* PYAudioRecorder.h */,
+				E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */,
+				E6E8B9E71A78C1B500FDF235 /* PYInnerAudioRecoder.h */,
+				E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */,
+			);
+			path = Recorder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6E8B9B11A78C0D800FDF235 /* PYAudioKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6E8B9C61A78C0D800FDF235 /* Build configuration list for PBXNativeTarget "PYAudioKit" */;
+			buildPhases = (
+				2BB7B39D551B9F211BCD6E1B /* Check Pods Manifest.lock */,
+				E6E8B9AE1A78C0D800FDF235 /* Sources */,
+				E6E8B9AF1A78C0D800FDF235 /* Frameworks */,
+				E6E8B9B01A78C0D800FDF235 /* CopyFiles */,
+				8198FCDA1CF416074645ACDB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PYAudioKit;
+			productName = PYAudioKit;
+			productReference = E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6E8B9AA1A78C0D800FDF235 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Push Lab";
+				TargetAttributes = {
+					E6E8B9B11A78C0D800FDF235 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = E6E8B9AD1A78C0D800FDF235 /* Build configuration list for PBXProject "PYAudioKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E6E8B9A91A78C0D800FDF235;
+			productRefGroup = E6E8B9B31A78C0D800FDF235 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6E8B9B11A78C0D800FDF235 /* PYAudioKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BB7B39D551B9F211BCD6E1B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8198FCDA1CF416074645ACDB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6E8B9AE1A78C0D800FDF235 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6E8B9F31A78C1B500FDF235 /* PYAudioRecorder.m in Sources */,
+				E6E8B9F51A78C1B500FDF235 /* PYInnerAudioRecoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E6E8B9C41A78C0D800FDF235 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E6E8B9C51A78C0D800FDF235 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6E8B9C71A78C0D800FDF235 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E6E8B9C81A78C0D800FDF235 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6E8B9AD1A78C0D800FDF235 /* Build configuration list for PBXProject "PYAudioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6E8B9C41A78C0D800FDF235 /* Debug */,
+				E6E8B9C51A78C0D800FDF235 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6E8B9C61A78C0D800FDF235 /* Build configuration list for PBXNativeTarget "PYAudioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6E8B9C71A78C0D800FDF235 /* Debug */,
+				E6E8B9C81A78C0D800FDF235 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6E8B9AA1A78C0D800FDF235 /* Project object */;
+}
