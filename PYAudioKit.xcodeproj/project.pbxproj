@@ -11,6 +11,9 @@
 		E6E8B9B61A78C0D800FDF235 /* PYAudioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */; };
 		E6E8B9F31A78C1B500FDF235 /* PYAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */; };
 		E6E8B9F51A78C1B500FDF235 /* PYInnerAudioRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */; };
+		E6E8BA0C1A7A28B400FDF235 /* PYInternalFilePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9FA1A7A28B400FDF235 /* PYInternalFilePlayer.m */; };
+		E6E8BA0D1A7A28B400FDF235 /* PYInternalHLSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9FC1A7A28B400FDF235 /* PYInternalHLSPlayer.m */; };
+		E6E8BA121A7A28B400FDF235 /* PYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8BA061A7A28B400FDF235 /* PYPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +39,10 @@
 		E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYAudioRecorder.m; sourceTree = "<group>"; };
 		E6E8B9E71A78C1B500FDF235 /* PYInnerAudioRecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYInnerAudioRecoder.h; sourceTree = "<group>"; };
 		E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYInnerAudioRecoder.m; sourceTree = "<group>"; };
+		E6E8B9FA1A7A28B400FDF235 /* PYInternalFilePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYInternalFilePlayer.m; sourceTree = "<group>"; };
+		E6E8B9FC1A7A28B400FDF235 /* PYInternalHLSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYInternalHLSPlayer.m; sourceTree = "<group>"; };
+		E6E8BA051A7A28B400FDF235 /* PYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPlayer.h; sourceTree = "<group>"; };
+		E6E8BA061A7A28B400FDF235 /* PYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 		E6E8B9B41A78C0D800FDF235 /* PYAudioKit */ = {
 			isa = PBXGroup;
 			children = (
+				E6E8B9F61A7A28B400FDF235 /* Player */,
 				E6E8B9E11A78C1B500FDF235 /* Recorder */,
 				E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */,
 			);
@@ -103,6 +111,17 @@
 				E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */,
 			);
 			path = Recorder;
+			sourceTree = "<group>";
+		};
+		E6E8B9F61A7A28B400FDF235 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				E6E8B9FA1A7A28B400FDF235 /* PYInternalFilePlayer.m */,
+				E6E8B9FC1A7A28B400FDF235 /* PYInternalHLSPlayer.m */,
+				E6E8BA051A7A28B400FDF235 /* PYPlayer.h */,
+				E6E8BA061A7A28B400FDF235 /* PYPlayer.m */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E8BA0D1A7A28B400FDF235 /* PYInternalHLSPlayer.m in Sources */,
+				E6E8BA0C1A7A28B400FDF235 /* PYInternalFilePlayer.m in Sources */,
+				E6E8BA121A7A28B400FDF235 /* PYPlayer.m in Sources */,
 				E6E8B9F31A78C1B500FDF235 /* PYAudioRecorder.m in Sources */,
 				E6E8B9F51A78C1B500FDF235 /* PYInnerAudioRecoder.m in Sources */,
 			);
