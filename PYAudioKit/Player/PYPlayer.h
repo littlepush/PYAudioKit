@@ -111,9 +111,9 @@ typedef NS_ENUM( NSInteger, PYPlayerStatus ) {
 
 // Play
 /*! All in one, the url can be http://url or local file://path, will not seek, and auto start to play when status changed to ready. */
-- (void)prepareUrl:(NSURL *)url;
+- (void)playUrl:(NSURL *)url;
 /*! load the audio data from the url and seek to specified position then start to play */
-- (void)prepareUrl:(NSURL *)url seekFrom:(CGFloat)startSeek;
+- (void)playUrl:(NSURL *)url seekFrom:(CGFloat)startSeek;
 /*! load the audio data, seek to specified position, and if <code>autoPlay</code> is set to NO, then will wait for play signal. */
 - (void)prepareUrl:(NSURL *)url seekFrom:(CGFloat)startSeek autoPlay:(BOOL)autoPlay;
 

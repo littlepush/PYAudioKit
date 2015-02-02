@@ -75,13 +75,13 @@
 
 // Play
 /*! All in one, the url can be http://url or local file://path, will not seek, and auto start to play when status changed to ready. */
-- (void)prepareUrl:(NSURL *)url
+- (void)playUrl:(NSURL *)url
 {
     //NSAssert(NO, @"Should override this method.");
     [self prepareUrl:url seekFrom:0 autoPlay:YES];
 }
 /*! load the audio data from the url and seek to specified position then start to play */
-- (void)prepareUrl:(NSURL *)url seekFrom:(CGFloat)startSeek
+- (void)playUrl:(NSURL *)url seekFrom:(CGFloat)startSeek
 {
     //NSAssert(NO, @"Should override this method.");
     [self prepareUrl:url seekFrom:startSeek autoPlay:YES];
@@ -207,7 +207,6 @@
 {
     PYSingletonLock
     if ( _internalPlayer == nil ) return;
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     
     [_internalPlayer playItem];
     PYSingletonUnLock

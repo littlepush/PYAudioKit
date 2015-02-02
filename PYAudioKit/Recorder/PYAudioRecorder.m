@@ -44,6 +44,11 @@
 #import "PYAudioRecorder.h"
 #import <PYCore/PYCore.h>
 
+AudioStreamBasicDescription aqPYAudioRedorcerFormatPCM = { 44100, kAudioFormatLinearPCM,
+    (kLinearPCMFormatFlagIsBigEndian | kLinearPCMFormatFlagIsSignedInteger | kLinearPCMFormatFlagIsPacked),
+    2 * sizeof(SInt16), 1, 2 * sizeof(SInt16), 2, 16, 0};
+AudioStreamBasicDescription aqPYAudioRecorderFormatMPEG4AAC = {8000, kAudioFormatMPEG4AAC, kMPEG4Object_AAC_LC, 0, 0, 0, 2, 0, 0};
+
 @interface PYAudioRecorder ()
 {
     PYInnerAudioRecoder             *_innerRecoder;
@@ -53,10 +58,10 @@
     
     CADisplayLink                   *_displayLink;
     
-    AudioStreamBasicDescription     _recordFormat;
+    AudioFileTypeID                 _fileType;
 }
 
-- (void)_setRecordFormat:(AudioStreamBasicDescription)format;
+- (void)_setRecordFormat:(AudioStreamBasicDescription)format fileType:(AudioFileTypeID)fileType;
 
 @end
 
@@ -76,16 +81,17 @@
     return _innerRecoder.lastError;
 }
 
-+ (instancetype)audioRecorderWithFormat:(AudioStreamBasicDescription)format
++ (instancetype)audioRecorderWithFormat:(AudioStreamBasicDescription)format fileType:(AudioFileTypeID)fileType
 {
     PYAudioRecorder *_recorder = [PYAudioRecorder object];
-    [_recorder _setRecordFormat:format];
+    [_recorder _setRecordFormat:format fileType:fileType];
     return _recorder;
 }
 
-- (void)_setRecordFormat:(AudioStreamBasicDescription)format
+- (void)_setRecordFormat:(AudioStreamBasicDescription)format fileType:(AudioFileTypeID)fileType
 {
     [_innerRecoder setAudioDataFormat:format];
+    _fileType = fileType;
 }
 
 - (id)init
@@ -105,7 +111,7 @@
         
         self.envSoundMeterRate = 0.45;
         // Set default format
-        [self _setRecordFormat:aqPYAudioRecorderFormatMPEG4AAC];
+        [self _setRecordFormat:aqPYAudioRecorderFormatMPEG4AAC fileType:kAudioFileM4AType];
     }
     return self;
 }
@@ -141,11 +147,11 @@
         }
     }
 }
-- (BOOL)starToRecord
+- (BOOL)startToRecord
 {
     // Start to record
-    [_innerRecoder recordToFile:_tempFilePath];
-    if ( _innerRecoder.lastError == nil ) {
+    [_innerRecoder recordToFile:_tempFilePath withType:_fileType];
+    if ( _innerRecoder.lastError.code == 0 ) {
         _isRecording = YES;
         return YES;
     }
@@ -159,7 +165,6 @@
         _filename = [filename stringByAppendingPathExtension:@"m4a"];
     }
     _saveDataPath = [PYDOCUMENTPATH stringByAppendingPathComponent:_filename];
-    DUMPObj(_saveDataPath);
     [_innerRecoder stop];
     NSFileManager *_fm = [NSFileManager defaultManager];
     NSError *_error = nil;
@@ -174,7 +179,7 @@
     if ( _error != nil ) {
         PYLog(@"%@", _error);
     }
-    [_innerRecoder beginToGatherEnvorinmentAudio];
+    // [_innerRecoder beginToGatherEnvorinmentAudio];
     return _saveDataPath;
 }
 - (BOOL)startToGatherEnvorinmentSound

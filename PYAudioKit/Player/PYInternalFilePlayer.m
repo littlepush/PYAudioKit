@@ -60,6 +60,12 @@
     return _iPlayer.currentTime;
 }
 
+@dynamic duration;
+- (CGFloat)duration
+{
+    return (CGFloat)_iPlayer.duration;
+}
+
 - (void)_reset
 {
     PYSingletonLock
@@ -72,7 +78,7 @@
 }
 
 - (BOOL)_internalLoadFilePlayUrlAndShouldAutoPlay
-{
+{    
     NSError *_error = nil;
     _status = PYPlayerStatusLoading;
     if ( [self.delegate respondsToSelector:@selector(player:willBeginToLoadURL:)] ) {
@@ -135,7 +141,9 @@
     PYSingletonLock
     if ( _iPlayer == nil ) return;
     if ( _iPlayer.isPlaying ) return;
+    
     _status = PYPlayerStatusPlaying;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [_iPlayer play];
     PYSingletonUnLock
 }

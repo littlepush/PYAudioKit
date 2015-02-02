@@ -91,7 +91,7 @@ extern AudioStreamBasicDescription aqPYAudioRecorderFormatMPEG4AAC;
  @param format: the record format struct.
  @return the instance of the recorder object or nil
  */
-+ (instancetype)audioRecorderWithFormat:(AudioStreamBasicDescription)format;
++ (instancetype)audioRecorderWithFormat:(AudioStreamBasicDescription)format fileType:(AudioFileTypeID)fileType;
 
 /*!
  @brief start to fetch audio meter. Will invoke the delegate 60 times one second
@@ -105,7 +105,7 @@ extern AudioStreamBasicDescription aqPYAudioRecorderFormatMPEG4AAC;
 /*
  @breif start to record audio
  */
-- (BOOL)starToRecord;
+- (BOOL)startToRecord;
 /*
  @brief Tell the recorder to stop and safe the audio data to specified file path.
  */

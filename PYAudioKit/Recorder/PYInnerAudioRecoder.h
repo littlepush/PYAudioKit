@@ -56,6 +56,8 @@ static const int kInnerAudioBufferNumbers           = 3;
     int                                 _lastUsedBuffer;
     BOOL                                _isRecording;
     BOOL                                _shouldWriteToFile;
+    BOOL                                _shouldWriteRawData;
+    NSString                            *_filePath;
     
     // Meter Table
     // Copy from Apple's Speak Here
@@ -82,7 +84,7 @@ static const int kInnerAudioBufferNumbers           = 3;
 
 // If the audio queue has not been started, then start it.
 // Otherwise just write the recorded buffer to the specified file.
-- (void)recordToFile:(NSString *)filepath;
+- (void)recordToFile:(NSString *)filepath withType:(AudioFileTypeID)fileType;
 
 // Stop record, this will also stop the envorinment audio gathering.
 - (void)stop;

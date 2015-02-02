@@ -51,6 +51,8 @@
 @property (nonatomic, readonly) UInt32                  audioBufferSize;
 @property (nonatomic, readonly) AudioQueueBufferRef     lastAudioBuffer;
 @property (nonatomic, assign)   SInt64                  currentPacketNumber;
+@property (nonatomic, readonly) BOOL                    shouldWriteRawData;
+@property (nonatomic, readonly) NSString                *filePath;
 
 - (void)setLastAudioBuffer:(AudioQueueBufferRef)buffer;
 
@@ -72,14 +74,38 @@ static void __innerAudioRecoderInputHanlder (
     
     if ( _recorder.shouldWriteToFile ) {
         // Write to file
-        if ( noErr == AudioFileWritePackets(_recorder.audioFileId,
-                                            false,
-                                            inBuffer->mAudioDataByteSize,
-                                            inPacketDesc,
-                                            _recorder.currentPacketNumber,
-                                            &inNumPackets,
-                                            inBuffer->mAudioData) ) {
-            _recorder.currentPacketNumber += inNumPackets;
+        if ( _recorder.shouldWriteRawData ) {
+            if ( inBuffer->mAudioDataByteSize != 0 ) {
+                FILE *_f = fopen(_recorder.filePath.UTF8String, "a+");
+                if ( _f != NULL ) {
+                    //DUMPInt(inPacketDesc->mDataByteSize);
+                    // Number of packages
+                    UInt32 _np = htonl(inNumPackets);
+                    fwrite(&_np, sizeof(UInt32), 1, _f);
+                    UInt32 _nd = (inPacketDesc == NULL) ? 0 : _np;
+                    fwrite(&_nd, sizeof(UInt32), 1, _f);
+                    if ( inPacketDesc != NULL ) {
+                        for ( UInt32 i = 0; i < inNumPackets; ++i ) {
+                            fwrite(inPacketDesc + i, sizeof(AudioStreamPacketDescription), 1, _f);
+                        }
+                    }
+                    // Buffer size
+                    UInt32 _bs = htonl(inBuffer->mAudioDataByteSize);
+                    fwrite(&_bs, sizeof(UInt32), 1, _f);
+                    fwrite(inBuffer->mAudioData, sizeof(Byte), inBuffer->mAudioDataByteSize, _f);
+                    fclose(_f);
+                }
+            }
+        } else {
+            if ( noErr == AudioFileWritePackets(_recorder.audioFileId,
+                                                false,
+                                                inBuffer->mAudioDataByteSize,
+                                                inPacketDesc,
+                                                _recorder.currentPacketNumber,
+                                                &inNumPackets,
+                                                inBuffer->mAudioData) ) {
+                _recorder.currentPacketNumber += inNumPackets;
+            }
         }
     }
     
@@ -113,8 +139,8 @@ static void __deriveBufferSize (
 }
 
 static OSStatus SetMagicCookieForFile (
-    AudioQueueRef inQueue,
-    AudioFileID   inFile
+                                       AudioQueueRef inQueue,
+                                       AudioFileID   inFile
 ) {
     OSStatus result = noErr;
     UInt32 cookieSize;
@@ -144,6 +170,21 @@ static OSStatus SetMagicCookieForFile (
         free (magicCookie);
     }
     return result;
+}
+
+static BOOL _recorder_setMagicCookieForRawFile(AudioQueueRef inQueue, FILE *file) {
+    UInt32 _cookieSize;
+    if ( AudioQueueGetPropertySize(inQueue, kAudioQueueProperty_MagicCookie, &_cookieSize) == noErr ) {
+        char *_magicCookie = (char *)malloc(_cookieSize);
+        if ( AudioQueueGetProperty(inQueue, kAudioQueueProperty_MagicCookie, _magicCookie, &_cookieSize) == noErr ) {
+            UInt32 _s = htonl(_cookieSize);
+            fwrite(&_s, sizeof(UInt32), 1, file);
+            fwrite(_magicCookie, sizeof(char), _cookieSize, file);
+        }
+        free ( _magicCookie );
+        return YES;
+    }
+    return NO;
 }
 
 static char *FormatError(char *str, OSStatus error)
@@ -191,7 +232,7 @@ static char *FormatError(char *str, OSStatus error)
         // Set default format
         _aqAudioDataFormat.mSampleRate       = 16000;
         _aqAudioDataFormat.mFormatID         = kAudioFormatMPEG4AAC;
-        _aqAudioDataFormat.mFormatFlags      = kAudioFormatMPEG4AAC_LD;
+        _aqAudioDataFormat.mFormatFlags      = 0;
         _aqAudioDataFormat.mFramesPerPacket  = 0;
         _aqAudioDataFormat.mChannelsPerFrame = 2;
         _aqAudioDataFormat.mBitsPerChannel   = 0;
@@ -313,24 +354,36 @@ static char *FormatError(char *str, OSStatus error)
     _isRecording = YES;
 }
 
-- (void)recordToFile:(NSString *)filepath
+- (void)recordToFile:(NSString *)filepath withType:(AudioFileTypeID)fileType
 {
     if ( !_isRecording ) {
         [self beginToGatherEnvorinmentAudio];
         if ( _lastError != 0 ) return;
     }
     // Set the file path, create the audio file, and set the flag to write to file.
-    AudioFileTypeID _fileType = kAudioFileM4AType;
-    CFURLRef _audioFileUrl = CFURLCreateFromFileSystemRepresentation(NULL,
-                                                                     (const UInt8 *)filepath.UTF8String,
-                                                                     filepath.length,
-                                                                     false);
-    AudioFileCreateWithURL(_audioFileUrl,
-                           _fileType,
-                           &_aqAudioDataFormat,
-                           kAudioFileFlags_EraseFile,
-                           &_aqAudioFile);
-    SetMagicCookieForFile(_aqAudioQueue, _aqAudioFile);
+    AudioFileTypeID _fileType = fileType;
+    _shouldWriteRawData = NO;
+    _filePath = [filepath copy];
+    
+    if ( _fileType == 0 ) {
+        _shouldWriteRawData = YES;
+        FILE *_f = fopen(filepath.UTF8String, "a+");
+        _recorder_setMagicCookieForRawFile(_aqAudioQueue, _f);
+        fclose(_f);
+    } else {
+        CFURLRef _audioFileUrl = CFURLCreateFromFileSystemRepresentation(NULL,
+                                                                         (const UInt8 *)filepath.UTF8String,
+                                                                         filepath.length,
+                                                                         false);
+        _lastError = AudioFileCreateWithURL(_audioFileUrl,
+                                            _fileType,
+                                            &_aqAudioDataFormat,
+                                            kAudioFileFlags_EraseFile,
+                                            &_aqAudioFile);
+        if ( _lastError != 0 ) return;
+        
+        SetMagicCookieForFile(_aqAudioQueue, _aqAudioFile);
+    }
     _shouldWriteToFile = YES;
 }
 
@@ -342,7 +395,9 @@ static char *FormatError(char *str, OSStatus error)
     // Dispose data
     AudioQueueDispose(_aqAudioQueue, true);
     // Close file
-    AudioFileClose( _aqAudioFile );
+    if ( _aqAudioFile != NULL ) {
+        AudioFileClose( _aqAudioFile );
+    }
     
     _isRecording = NO;
 }
@@ -384,6 +439,18 @@ static char *FormatError(char *str, OSStatus error)
 - (AudioQueueBufferRef)currentAudioBuffer
 {
     return _aqAudioBufferList[_lastUsedBuffer];
+}
+
+@dynamic shouldWriteRawData;
+- (BOOL)shouldWriteRawData
+{
+    return _shouldWriteRawData;
+}
+
+@dynamic filePath;
+- (NSString *)filePath
+{
+    return _filePath;
 }
 
 - (void)setLastAudioBuffer:(AudioQueueBufferRef)buffer

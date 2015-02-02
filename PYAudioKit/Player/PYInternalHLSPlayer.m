@@ -219,6 +219,7 @@ PYKVO_CHANGED_RESPONSE(_iItem, timedMetadata);
     PYSingletonLock
     if ( _status == PYPlayerStatusReady ) {
         // First time to play
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
         [_iPlayer play];
     } else {
         // Which should not happen
