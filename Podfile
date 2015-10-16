@@ -3,7 +3,7 @@
 
 target 'PYAudioKit' do
 
-pod "PYCore", "~> 0.9"
+pod "PYCore"
 
 end
 
