@@ -272,7 +272,7 @@ static char *FormatError(char *str, OSStatus error)
 
     Float32 _allPower = 0;
     for (int i = 0; i < 2; i++) {
-        if (_chan_lvls) {
+        if ( &_chan_lvls[0] ) {
             _allPower += _chan_lvls[i].mPeakPower;
         }
     }
