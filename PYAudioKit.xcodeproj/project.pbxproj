@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA1F00850208FE2291653BB7 /* libPods-PYAudioKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */; };
+		03CDD30A10BC113AF6225A7C /* libPods-PYAudioKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8544AFE22B64BB7240B2FB /* libPods-PYAudioKit.a */; };
+		9B2E34628CF0049D43347581 /* libPods-PYAudioKitTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3832B40CB29871C9C05117 /* libPods-PYAudioKitTest.a */; };
+		E6677E771ECF891100C9ED97 /* PYAudioKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E6677E761ECF891100C9ED97 /* PYAudioKitTest.m */; };
+		E6677E791ECF891100C9ED97 /* libPYAudioKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */; };
 		E6E8B9B61A78C0D800FDF235 /* PYAudioKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */; };
 		E6E8B9F31A78C1B500FDF235 /* PYAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E31A78C1B500FDF235 /* PYAudioRecorder.m */; };
 		E6E8B9F51A78C1B500FDF235 /* PYInnerAudioRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9E81A78C1B500FDF235 /* PYInnerAudioRecoder.m */; };
@@ -15,6 +18,16 @@
 		E6E8BA0D1A7A28B400FDF235 /* PYInternalHLSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8B9FC1A7A28B400FDF235 /* PYInternalHLSPlayer.m */; };
 		E6E8BA121A7A28B400FDF235 /* PYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E8BA061A7A28B400FDF235 /* PYPlayer.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6677E7A1ECF891100C9ED97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6E8B9AA1A78C0D800FDF235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6E8B9B11A78C0D800FDF235;
+			remoteInfo = PYAudioKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E6E8B9B01A78C0D800FDF235 /* CopyFiles */ = {
@@ -30,9 +43,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.release.xcconfig"; sourceTree = "<group>"; };
-		6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.debug.xcconfig"; sourceTree = "<group>"; };
-		889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYAudioKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01B455141282FB52193F35BF /* Pods-PYAudioKitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKitTest/Pods-PYAudioKitTest.debug.xcconfig"; sourceTree = "<group>"; };
+		1D11837C42674997C4AB7B80 /* Pods-PYAudioKitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKitTest/Pods-PYAudioKitTest.release.xcconfig"; sourceTree = "<group>"; };
+		6D8544AFE22B64BB7240B2FB /* libPods-PYAudioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYAudioKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8AFB97FE7A440B4EDE05EB4 /* Pods-PYAudioKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3832B40CB29871C9C05117 /* libPods-PYAudioKitTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYAudioKitTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6677E741ECF891100C9ED97 /* PYAudioKitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PYAudioKitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6677E761ECF891100C9ED97 /* PYAudioKitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYAudioKitTest.m; sourceTree = "<group>"; };
+		E6677E781ECF891100C9ED97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPYAudioKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E8B9B51A78C0D800FDF235 /* PYAudioKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAudioKit.h; sourceTree = "<group>"; };
 		E6E8B9E21A78C1B500FDF235 /* PYAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYAudioRecorder.h; sourceTree = "<group>"; };
@@ -43,44 +61,67 @@
 		E6E8B9FC1A7A28B400FDF235 /* PYInternalHLSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYInternalHLSPlayer.m; sourceTree = "<group>"; };
 		E6E8BA051A7A28B400FDF235 /* PYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYPlayer.h; sourceTree = "<group>"; };
 		E6E8BA061A7A28B400FDF235 /* PYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYPlayer.m; sourceTree = "<group>"; };
+		F0D13E7FEEB80FCFC673EBDA /* Pods-PYAudioKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYAudioKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYAudioKit/Pods-PYAudioKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E6677E711ECF891100C9ED97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6677E791ECF891100C9ED97 /* libPYAudioKit.a in Frameworks */,
+				9B2E34628CF0049D43347581 /* libPods-PYAudioKitTest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6E8B9AF1A78C0D800FDF235 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1F00850208FE2291653BB7 /* libPods-PYAudioKit.a in Frameworks */,
+				03CDD30A10BC113AF6225A7C /* libPods-PYAudioKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0295A1A151C5BF2CF68FD968 /* Pods */ = {
+		B8C175D5ED6F35FA85BCC4CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */,
-				4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */,
+				B8AFB97FE7A440B4EDE05EB4 /* Pods-PYAudioKit.debug.xcconfig */,
+				F0D13E7FEEB80FCFC673EBDA /* Pods-PYAudioKit.release.xcconfig */,
+				01B455141282FB52193F35BF /* Pods-PYAudioKitTest.debug.xcconfig */,
+				1D11837C42674997C4AB7B80 /* Pods-PYAudioKitTest.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4F12A9D3F04707AFAE2D2066 /* Frameworks */ = {
+		C04FD74DD88AACB9170B6E4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				889754EBFDA82D8DE0EBD883 /* libPods-PYAudioKit.a */,
+				6D8544AFE22B64BB7240B2FB /* libPods-PYAudioKit.a */,
+				BB3832B40CB29871C9C05117 /* libPods-PYAudioKitTest.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6677E751ECF891100C9ED97 /* PYAudioKitTest */ = {
+			isa = PBXGroup;
+			children = (
+				E6677E761ECF891100C9ED97 /* PYAudioKitTest.m */,
+				E6677E781ECF891100C9ED97 /* Info.plist */,
+			);
+			path = PYAudioKitTest;
 			sourceTree = "<group>";
 		};
 		E6E8B9A91A78C0D800FDF235 = {
 			isa = PBXGroup;
 			children = (
 				E6E8B9B41A78C0D800FDF235 /* PYAudioKit */,
+				E6677E751ECF891100C9ED97 /* PYAudioKitTest */,
 				E6E8B9B31A78C0D800FDF235 /* Products */,
-				0295A1A151C5BF2CF68FD968 /* Pods */,
-				4F12A9D3F04707AFAE2D2066 /* Frameworks */,
+				B8C175D5ED6F35FA85BCC4CD /* Pods */,
+				C04FD74DD88AACB9170B6E4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E6E8B9B21A78C0D800FDF235 /* libPYAudioKit.a */,
+				E6677E741ECF891100C9ED97 /* PYAudioKitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,15 +169,36 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E6677E731ECF891100C9ED97 /* PYAudioKitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6677E7E1ECF891100C9ED97 /* Build configuration list for PBXNativeTarget "PYAudioKitTest" */;
+			buildPhases = (
+				C8A93D927EE64AF91188F8D2 /* [CP] Check Pods Manifest.lock */,
+				E6677E701ECF891100C9ED97 /* Sources */,
+				E6677E711ECF891100C9ED97 /* Frameworks */,
+				E6677E721ECF891100C9ED97 /* Resources */,
+				91332B88E0C9F11C99110FD7 /* [CP] Embed Pods Frameworks */,
+				4A1F6829F521DCBF9C30EADD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6677E7B1ECF891100C9ED97 /* PBXTargetDependency */,
+			);
+			name = PYAudioKitTest;
+			productName = PYAudioKitTest;
+			productReference = E6677E741ECF891100C9ED97 /* PYAudioKitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E6E8B9B11A78C0D800FDF235 /* PYAudioKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6E8B9C61A78C0D800FDF235 /* Build configuration list for PBXNativeTarget "PYAudioKit" */;
 			buildPhases = (
-				2BB7B39D551B9F211BCD6E1B /* Check Pods Manifest.lock */,
+				152E1EC7B89BD601A6C55B0B /* [CP] Check Pods Manifest.lock */,
 				E6E8B9AE1A78C0D800FDF235 /* Sources */,
 				E6E8B9AF1A78C0D800FDF235 /* Frameworks */,
 				E6E8B9B01A78C0D800FDF235 /* CopyFiles */,
-				8198FCDA1CF416074645ACDB /* Copy Pods Resources */,
+				FA6DE0858300C3C1BF799BB6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +218,11 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Push Lab";
 				TargetAttributes = {
+					E6677E731ECF891100C9ED97 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = VT7263HWQT;
+						ProvisioningStyle = Automatic;
+					};
 					E6E8B9B11A78C0D800FDF235 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -173,34 +241,90 @@
 			projectRoot = "";
 			targets = (
 				E6E8B9B11A78C0D800FDF235 /* PYAudioKit */,
+				E6677E731ECF891100C9ED97 /* PYAudioKitTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		E6677E721ECF891100C9ED97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXShellScriptBuildPhase section */
-		2BB7B39D551B9F211BCD6E1B /* Check Pods Manifest.lock */ = {
+		152E1EC7B89BD601A6C55B0B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8198FCDA1CF416074645ACDB /* Copy Pods Resources */ = {
+		4A1F6829F521DCBF9C30EADD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYAudioKitTest/Pods-PYAudioKitTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91332B88E0C9F11C99110FD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYAudioKitTest/Pods-PYAudioKitTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8A93D927EE64AF91188F8D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6DE0858300C3C1BF799BB6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +335,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E6677E701ECF891100C9ED97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6677E771ECF891100C9ED97 /* PYAudioKitTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6E8B9AE1A78C0D800FDF235 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,7 +357,58 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E6677E7B1ECF891100C9ED97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6E8B9B11A78C0D800FDF235 /* PYAudioKit */;
+			targetProxy = E6677E7A1ECF891100C9ED97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E6677E7C1ECF891100C9ED97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B455141282FB52193F35BF /* Pods-PYAudioKitTest.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VT7263HWQT;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PYAudioKitTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushlab.PYAudioKitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E6677E7D1ECF891100C9ED97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D11837C42674997C4AB7B80 /* Pods-PYAudioKitTest.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VT7263HWQT;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PYAudioKitTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushlab.PYAudioKitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		E6E8B9C41A78C0D800FDF235 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -303,7 +486,7 @@
 		};
 		E6E8B9C71A78C0D800FDF235 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A5769B03D28E22D81153E72 /* Pods-PYAudioKit.debug.xcconfig */;
+			baseConfigurationReference = B8AFB97FE7A440B4EDE05EB4 /* Pods-PYAudioKit.debug.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -313,7 +496,7 @@
 		};
 		E6E8B9C81A78C0D800FDF235 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FC2C3F4A613188723CA5888 /* Pods-PYAudioKit.release.xcconfig */;
+			baseConfigurationReference = F0D13E7FEEB80FCFC673EBDA /* Pods-PYAudioKit.release.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -324,6 +507,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E6677E7E1ECF891100C9ED97 /* Build configuration list for PBXNativeTarget "PYAudioKitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6677E7C1ECF891100C9ED97 /* Debug */,
+				E6677E7D1ECF891100C9ED97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E6E8B9AD1A78C0D800FDF235 /* Build configuration list for PBXProject "PYAudioKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
