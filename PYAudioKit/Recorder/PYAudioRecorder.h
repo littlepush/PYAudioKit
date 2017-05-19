@@ -88,7 +88,8 @@ extern AudioStreamBasicDescription aqPYAudioRecorderFormatMPEG4AAC;
 
 /*!
  @brief create an audio recorder with specified recording format.
- @param format: the record format struct.
+ @param format the record format struct.
+ @param fileType the audio file type.
  @return the instance of the recorder object or nil
  */
 + (instancetype)audioRecorderWithFormat:(AudioStreamBasicDescription)format fileType:(AudioFileTypeID)fileType;

@@ -131,10 +131,6 @@
 
 @end
 
-/*!
- @class The audio player class. Used this to play an HTTP Live Stream(HLS) or a local audio file.
- @discussion The only interface which can be used as audio player.
- */
 @interface PYAudioPlayer () < PYPlayerDelegate >
 {
     PYPlayer            *_internalPlayer;
