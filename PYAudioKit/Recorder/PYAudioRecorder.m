@@ -143,7 +143,7 @@ AudioStreamBasicDescription aqPYAudioRecorderFormatMPEG4AAC = {8000, kAudioForma
     float _rate = (_isRecording ? 1.f : self.envSoundMeterRate );
     if ( self.delegate ) {
         if ( [self.delegate respondsToSelector:@selector(audioRecorder:updateMeter:)] ) {
-            [self.delegate audioRecorder:self updateMeter:_rate];
+            [self.delegate audioRecorder:self updateMeter:(_rate * (float)_innerRecoder.currentWeightOfFirstChannel)];
         }
     }
 }
