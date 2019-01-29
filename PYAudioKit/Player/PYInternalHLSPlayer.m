@@ -287,7 +287,7 @@ PYKVO_CHANGED_RESPONSE(_iItem, timedMetadata);
             _sSelf->_isSeeking = NO;
             
             if ( finished == YES ) {
-                _status = PYPlayerStatusReady;
+                self->_status = PYPlayerStatusReady;
                 if ( autoPlay ) {
                     // Begin to play
                     [_wSelf playItem];
